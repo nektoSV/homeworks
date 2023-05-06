@@ -6,11 +6,11 @@ function solveEquation(a, b, c) {
    return arr; 
   } else if(D === 0) {
     let X = -b / (2 * a);
-    return arr ;
+    return  arr = [X];
   } else if(D > 0) {
     let X1 = (-b + Math.sqrt(D) ) / (2 * a);
     let X2 = (-b - Math.sqrt(D) ) / (2 * a);
-    return arr ;
+    return  arr = [X1, X2];
   }
   
 }
@@ -19,10 +19,10 @@ function solveEquation(a, b, c) {
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   const P = (percent / 100) / 12;
   const S = (amount - contribution);
-  const payMonth = S * (P + (P / (((1 + P) ** 12) - 1)));
+  const payMonth = S * (P + (P / (((1 + P) ** countMonths) - 1)));
   const totalPayment = (payMonth * countMonths).toFixed(2);
-  return (totalPayment);
+  return Number(totalPayment);
 }
 
-calculateTotalMortgage();
+
 
